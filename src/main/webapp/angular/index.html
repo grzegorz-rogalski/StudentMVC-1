@@ -1,17 +1,77 @@
 <html ng-app="student">
 <head>
   <meta charset="utf-8">
+  
   <title>Student App</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
   <script src="app.js"></script>
+  
+  <style type="text/css">
+/* <![CDATA[ */
+html, body {
+	background-color: #2A272D;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#top {
+	width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+#NAGLOWEK {
+	background-color: #D59167;
+}
+
+#MENU {
+	width: 250px;
+	float: left;
+	
+	background-color: #FD4D38;
+}
+
+#TRESC {
+	width: 774px;
+	float: left;
+	overflow: hidden;
+	background-color: #FF9D4A;
+}
+
+#STOPKA {
+	clear: both;
+	width: 100%;
+	background-color: #D59167;
+}
+/* ]]> */
+</style>
+
 </head>
 <body ng-controller="MainCtrl">
-<h1>Lista studentów :)</h1>
-  
-  <ul ng-repeat="student in studenci">
-	<li>{{student.imie}}</li>
+
+  <div id="top">
+	<div id="NAGLOWEK">
+	<h1>Lista studentów :)</h1>
+	</div>
+	<div id="MENU"><b><h2>Menu</h2></b> 
+	<input type="button" value="pobierz Studentow" ng-click="pokazStudentow()"/><br/>
+	<input type="button" value="pobierz Indeksy" ng-click="pokazStudentow()"/><br/>
+	<input type="button" value="pobierz Przedmioty" ng-click="pokazStudentow()"/><br/>
+	<input type="button" value="pobierz Wyk³adowców" ng-click="pokazStudentow()"/><br/>
+	<input type="button" value="pobierz Kanapkê" ng-click="pokazStudentow()"/><br/>
+	</div>
+	<div id="TRESC">
+	<ul ng-repeat="student in studenci">
+	<li>{{student.imie+" "+student.nazwisko}}</li>
   </ul>
+  </div>
+	<div id="STOPKA">copyright by Rogalski & Denysiuk</div>
+</div>
+   
   
-  <input type="button" value="pobierzStudentow" ng-click="pokazStudentow()"/>
+
 </body>
 </html>
